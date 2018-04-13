@@ -121,56 +121,56 @@
 
 
 (defrule normal-tyre-state-conclusions ""
-   (problem-type atletismo)
-   (atletismo-inflated yes)
-   (atletismo-alignment yes)
-   (atletismo-movement yes)
+   (deporte atletismo)
+   (atletismo-inflated si)
+   (atletismo-alignment si)
+   (atletismo-movement si)
    (atletismo-vibration no)
    (not (jugador ?))
    =>
    (assert (jugador "No jugador needed.")))
 
-(defrule atletismo-punctured-yes ""
-   (problem-type atletismo)
+(defrule atletismo-punctured-si ""
+   (deporte atletismo)
    (atletismo-inflated no)
-   (atletismo-puncture yes)
+   (atletismo-puncture si)
    (not (jugador ?))
    =>
    (assert (jugador "Get Puncture jugadored.")))
    
 (defrule atletismo-punctured-no ""
-   (problem-type atletismo)
-   (atletismo-inflated yes)
+   (deporte atletismo)
+   (atletismo-inflated si)
    (atletismo-puncture no)
    (not (jugador ?))
    =>
    (assert (jugador "Get atletismo Inflated.")))
 
 (defrule atletismo-aligned-no ""
-   (problem-type atletismo)
-   (atletismo-inflated yes)
+   (deporte atletismo)
+   (atletismo-inflated si)
    (atletismo-alignment no)
    (not (jugador ?))
    =>
    (assert (jugador "Get atletismo Aligned.")))
    
 (defrule atletismo-movement-no ""
-   (problem-type atletismo)
+   (deporte atletismo)
    (atletismo-movement no)
    (not (jugador ?))
    =>
    (assert (jugador "Apply oil in the axle.")))
    
-(defrule atletismo-mud-yes ""
-   (problem-type atletismo)
-   (atletismo-mud-present yes)
+(defrule atletismo-mud-si ""
+   (deporte atletismo)
+   (atletismo-mud-present si)
    (not (jugador ?))
    =>
    (assert (jugador "Clean mud or dirt packed in the back of the rim.")))
    
-(defrule atletismo-noise-yes ""
-   (problem-type atletismo)
-   (atletismo-noise-present yes)
+(defrule atletismo-noise-si ""
+   (deporte atletismo)
+   (atletismo-noise-present si)
    (not (jugador ?))
    =>
    (assert (jugador "Change Loose, worn or damaged wheel bearings.")))
@@ -195,5 +195,5 @@
   (printout t crlf crlf)
   (printout t "Jugador y sus logros:")
   (printout t crlf crlf)
-  (format t " %s%n%n%n" ?texto))
+  (format t "%s%n%n%n" ?texto))
 
