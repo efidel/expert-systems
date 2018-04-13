@@ -47,7 +47,7 @@
    =>
    (assert (deporte
       (preguntar "¿Cuál es el deporte que desea consultar? (baloncesto / atletismo / beisbol) "
-                    baloncesto atletismo tennis beisbol))))
+                    baloncesto atletismo beisbol))))
 
 
 ;;;========================================================
@@ -126,54 +126,54 @@
    (atletismo-alignment yes)
    (atletismo-movement yes)
    (atletismo-vibration no)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "No repair needed.")))
+   (assert (jugador "No jugador needed.")))
 
 (defrule atletismo-punctured-yes ""
    (problem-type atletismo)
    (atletismo-inflated no)
    (atletismo-puncture yes)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Get Puncture Repaired.")))
+   (assert (jugador "Get Puncture jugadored.")))
    
 (defrule atletismo-punctured-no ""
    (problem-type atletismo)
    (atletismo-inflated yes)
    (atletismo-puncture no)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Get atletismo Inflated.")))
+   (assert (jugador "Get atletismo Inflated.")))
 
 (defrule atletismo-aligned-no ""
    (problem-type atletismo)
    (atletismo-inflated yes)
    (atletismo-alignment no)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Get atletismo Aligned.")))
+   (assert (jugador "Get atletismo Aligned.")))
    
 (defrule atletismo-movement-no ""
    (problem-type atletismo)
    (atletismo-movement no)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Apply oil in the axle.")))
+   (assert (jugador "Apply oil in the axle.")))
    
 (defrule atletismo-mud-yes ""
    (problem-type atletismo)
    (atletismo-mud-present yes)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Clean mud or dirt packed in the back of the rim.")))
+   (assert (jugador "Clean mud or dirt packed in the back of the rim.")))
    
 (defrule atletismo-noise-yes ""
    (problem-type atletismo)
    (atletismo-noise-present yes)
-   (not (repair ?))
+   (not (jugador ?))
    =>
-   (assert (repair "Change Loose, worn or damaged wheel bearings.")))
+   (assert (jugador "Change Loose, worn or damaged wheel bearings.")))
 
 
 ;;;========================================================
